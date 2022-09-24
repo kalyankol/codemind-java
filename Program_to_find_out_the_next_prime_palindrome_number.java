@@ -1,43 +1,44 @@
-import java.util.Scanner;
-class HelloWorld {
-    static boolean prime(int n){
-        boolean isprime=true;
+import java.util.*;
+class primepal{
+    public static boolean prime(int n){
+        boolean p=true;
         if(n<=1){
-            isprime=false;
+            p=false;
         }
         else{
             for(int i=2;i<n;i++){
                 if(n%i==0){
-                    isprime=false;
+                    p=false;
+                    break;
                 }
             }
         }
-        return isprime;
+        return p;
     }
-    static boolean pal(int n){
-        int a=n;
-        int rem=0;
-        int r;
-        boolean ispal=false;
-        while(n>0){
+    public static boolean pal(int n){
+        int r,rem=0,a=n;
+        while(n!=0){
             r=n%10;
             rem=(rem*10)+r;
             n=n/10;
         }
-        if(a==rem){
-            ispal=true;
+        if(rem==a){
+            return true;
         }
-        return ispal;
+        else{
+            return false;
+        }
     }
-    public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        int n=scanner.nextInt();
+    public static void main(String agrs[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        boolean p,p1;
         while(true){
-            n=n+1;
-            boolean isprime=prime(n);
-            boolean ispal=pal(n);
-            if(isprime && ispal){
-                System.out.println(n);
+            n+=1;
+            p=prime(n);
+            p1=pal(n);
+            if(p && p1){
+                System.out.print(n);
                 break;
             }
         }
