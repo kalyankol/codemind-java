@@ -1,37 +1,33 @@
-import java.util.Scanner;
-class Main
-{
-    static boolean prime(int n){
-        boolean isprime=true;
+import java.util.*;
+class battle{
+    public static boolean prime(int n){
+        boolean p=true;
         if(n<=1){
-            isprime=false;
+            p=false;
         }
         else{
             for(int i=2;i<n;i++){
                 if(n%i==0){
-                    isprime=false;
+                    p=false;
                     break;
-                }
+                }    
             }
         }
-        return isprime;
+        return p;
     }
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int a=sc.nextInt();
-		int b=sc.nextInt();
-		int n=a+b;
-		int n1=n;
-		int f=0;
-		boolean prime;
-		while(true){
-		    n+=1;
-		    prime=prime(n);
-		    if(prime){
-		        f=n;
-		        break;
-		    }
-		}
-		System.out.print(f-n1);
-	}
+    public static void main(String agrs[]){
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        int n=n1+n2;
+        boolean p;
+        while(true){
+            n+=1;
+            p=prime(n);
+            if(p){
+                System.out.print(n-(n1+n2));
+                break;
+            }
+        }
+    }
 }
