@@ -1,33 +1,29 @@
-import java.util.Scanner;
-import java.lang.Math;
-class Main
-{
-    static boolean prime(int n){
-        boolean isprime=true;
+import java.util.*;
+class primes{
+    public static boolean prime(int n){
+        boolean p=true;
         if(n<=1){
-            isprime=false;
+            p=false;
         }
         else{
             for(int i=2;i<n;i++){
                 if(n%i==0){
-                    isprime=false;
+                    p=false;
                     break;
                 }
             }
         }
-        return isprime;
+        return p;
     }
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int x=sc.nextInt();
-		int y=sc.nextInt();
-		boolean prime;
-		for(int i=x;i<=y;i++){
-		    prime=prime(i);
-		    if(prime){
-		        System.out.printf("%d
-",i);
-		    }
-		}
-	}
+    public static void main(String agrs[]){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        //boolean p;
+        for(int i=a+1;i<b;i++){
+            if(prime(i)){
+                System.out.println(i);
+            }
+        }
+    }
 }
