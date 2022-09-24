@@ -1,24 +1,19 @@
-import java.util.Scanner;
-class Main
-{
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int n=sc.nextInt();
-		if(n<0){
-		    System.out.print("True");
-		}
-		else{
-		    int s=0;
-		    String str="False";
-		    for(int i=1;i<n;i++){
-		        if(n%i==0){
-		            s+=i;
-		        }
-		    }
-		    if(s==n){
-		        str="True";
-		    }
-		    System.out.print(str);
-		}
-	}
+import java.util.*;
+class perfect{
+    public static void main(String agrs[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int f=0;
+        for(int i=1;i<n;i++){
+            if(n%i==0){
+                f+=i;
+            }
+        }
+        if(f==n){
+            System.out.print("True");
+        }
+        else{
+            System.out.print("False");
+        }
+    }
 }
